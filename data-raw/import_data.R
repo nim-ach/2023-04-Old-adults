@@ -32,3 +32,4 @@ elderly[, `:=`(
 ## Export data
 save(elderly, file = "data/elderly.RData")
 fwrite(elderly, file = "data/elderly.csv")
+
