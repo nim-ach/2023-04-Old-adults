@@ -11,27 +11,27 @@ data("elderly")
 # Exploring the dataset ---------------------------------------------------
 
 dim(elderly) # rows and cols
-#> [1] 77 84
+#> [1] 77 65
 
 cor <- correlation::correlation(elderly[, -c("id")], p_adjust = "none", method = "spearman")
 
 cor_signif <- dplyr::filter(.data = cor, p < 0.05,
-                            !Parameter1 %like% "_2$", !Parameter2 %like% "_2$",
-                            !Parameter1 %like% "_3$", !Parameter2 %like% "_3$",
+                          # !Parameter1 %like% "_2$", !Parameter2 %like% "_2$",
+                          # !Parameter1 %like% "_3$", !Parameter2 %like% "_3$",
                             !((Parameter1 %like% "hrv") & (Parameter2 %like% "hrv")),
                             !((Parameter1 %like% "^c_") & (Parameter2 %like% "^c_")),
                             !((Parameter1 %like% "^m_") & (Parameter2 %like% "^m_")),
                             !((Parameter1 %like% "^se_") & (Parameter2 %like% "^se_"))) |>
   dplyr::arrange(rho)
 
-vars = c("m_agua" = "Agua", "hrv_sd1_1" = "SD1", "hrv_sd2_1" = "SD2", "m_grasa_torso_perc" = "Grasa torso (%)",
-         "m_edad_calc" = "Edad metabólica", "m_musc_torso" = "Músculo torso", "edad" = "Edad", "hrv_vlf_1" = "VLF",
-         "hrv_sdnn_1" = "SDNN", "se_gss" = "GSS", "m_grasa_mid_perc" = "Grasa MID (%)", "hrv_stress_1" = "Stress",
-         "m_grasa_mii_perc" = "Grasa MII (%)",  "m_grasa_msd_perc" = "Grasa MSD (%)", "m_grasa_total_perc" = "Grasa total (%)",
-         "m_grasa_msi_perc" = "Grasa MSI (%)", "hrv_pns_1" = "PNS", "se_sueno_otono" = "Sueño otoño", "c_pad" = "Presión diastólica",
-         "se_sueno_primavera" = "Sueño primavera", "sppb_total" = "SPPB total", "se_sueno_invierno" = "Sueño invierno",
-         "pss_total" = "PSS total", "hrv_mean_hr_1" = "FC media", "hrv_mean_rr_1" = "RR media", "c_pp" = "Presión de pulso",
-         "m_imc" = "IMC", "m_peso_kg_1" = "Peso (kg)", "m_musc_msi" = "Músculo MSD", "hrv_sns_1" = "SNS", "hrv_lf_1" = "LF")
+vars = c("m_agua" = "Agua", "m_grasa_torso_perc" = "Grasa torso (%)", "m_grasa_total_perc" = "Grasa total (%)", "edad" = "Edad",
+         "hrv_vlf_1" = "VLF (pre)", "hrv_sdnn_1" = "SDNN (pre)", "hrv_rmssd_1" = "RMSSD (pre)", "hrv_stress_1" = "Stress (pre)", "hrv_pns_1" = "PNS (pre)", "hrv_sns_1" = "SNS (pre)", "hrv_hf_1" = "HF (pre)", "hrv_lf_1" = "LF (pre)", "hrv_mean_hr_1" = "FC media (pre)", "hrv_mean_rr_1" = "RR media (pre)",
+         "hrv_vlf_2" = "VLF (peri)", "hrv_sdnn_2" = "SDNN (peri)", "hrv_rmssd_2" = "RMSSD (peri)", "hrv_stress_2" = "Stress (peri)", "hrv_pns_2" = "PNS (peri)", "hrv_sns_2" = "SNS (peri)", "hrv_hf_2" = "HF (peri)", "hrv_lf_2" = "LF (peri)", "hrv_mean_hr_2" = "FC media (peri)", "hrv_mean_rr_2" = "RR media (peri)",
+         "hrv_vlf_3" = "VLF (post)", "hrv_sdnn_3" = "SDNN (post)", "hrv_rmssd_3" = "RMSSD (post)", "hrv_stress_3" = "Stress (post)", "hrv_pns_3" = "PNS (post)", "hrv_sns_3" = "SNS (post)", "hrv_hf_3" = "HF (post)", "hrv_lf_3" = "LF (post)", "hrv_mean_hr_3" = "FC media (post)", "hrv_mean_rr_3" = "RR media (post)",
+         "se_sueno_otono" = "Sueño otoño", "c_pad" = "Presión diastólica", "m_talla" = "Talla", "m_masa_osea" = "Masa ósea", "m_metab_basal" = "Metabolismo basal",
+         "se_sueno_primavera" = "Sueño primavera", "sppb_total" = "SPPB total", "se_sueno_invierno" = "Sueño invierno", "se_sueno_verano" = "Sueño verano",
+         "pss_total" = "PSS total", "c_pp" = "Presión de pulso", "m_peso_kg_2" = "Peso (Kg)", "m_musc_total" = "Masa muscular",
+         "m_imc" = "IMC", "m_peso_kg_1" = "Peso (kg)", "m_peso_kg_2" = "Peso (kg)")
 
 cor_signif$Parameter1 <- vars[cor_signif$Parameter1]
 cor_signif$Parameter2 <- vars[cor_signif$Parameter2]

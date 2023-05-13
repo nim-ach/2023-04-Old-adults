@@ -5,8 +5,17 @@ library(readxl)
 library(data.table)
 
 ## Import excel file
-elderly <- read_excel("data-raw/Datos Adultos Mayores v1.xlsx", skip = 8)
+elderly <- read_excel("data-raw/raw_data.xlsx",
+                      skip = 8,
+                      col_names = readLines("data-raw/helpers/colnames.txt"))
 elderly <- as.data.table(elderly)
+
+elderly[, sppb_cat := fcase(
+  grepl("minima", tolower(sppb_cat)), "Mínima",
+  grepl("leve", tolower(sppb_cat)), "Leve",
+  grepl("moderada", tolower(sppb_cat)), "Moderada",
+  grepl("grave", tolower(sppb_cat)), "Grave"
+)]
 
 ## Transform to factor variables
 elderly[, `:=`(
