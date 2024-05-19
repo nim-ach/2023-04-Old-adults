@@ -1,0 +1,24 @@
+
+Afirmaciones:
+  1. Un mayor estrés percibido (pss_total) se asocia a un menor tono simpático previo al ejercicio (hrv_sns_1).
+    1.1. Este efecto se mantiene constante aún después de considerar el efecto residual del sexo y la edad en el modelo.
+    1.2. Dentro del modelo que incluye el sexo y la edad, observamos que por cada año de edad, pareciera existir un aumento del tono simpático previo al ejercicio (hrv_sns_1).
+  2. Contrario a lo que se podría hipotetizar, la masa muscular no ejerce un efecto, ni pareciera estar asociado a la aptitud física en personas mayores.
+    2.1. Al considerar el efecto marginal del sexo y la edad, las estimaciones iniciales del efecto de la composición corporal sobre la aptitud física no cambiaron.
+  3. El sexo no pareciera influir sobre la respuesta autonómica cardiaca (hrv_sns_3), independiente del tono simpático previo al ejercicio (hrv_sns_1).
+  4. Contrario a la creencia popular, el estrés que las personas mayores perciben (pss_total) no está asociado al estrés autonómico cardíaco (hrv_stress_1), que es una forma de estrés fisiológico, independientemente de la edad y el sexo.
+  5. El estrés percibido (pss_total) pareciera estar relacionado linealmente con la severidad autopercibida de la sensibilidad estacional (se_severidad), donde una mayor severidad se relaciona con un mayor estrés percibido. Del mismo modo, pareciera haber una relación no lineal entre la sensibilidad estacional medida y el estrés, donde aquellos con winter blues experimentan mayor estrés percibido que aquellos con SAD o trastornos estacionales, independiente de la edad y el sexo.
+  6. El estrés percibido pareciera ser menor cuanto mayor tono simpático basal, independiente de la presión arterial, sexo y edad.
+  7. El estrés percibido pareciera estar asociado linealmente con la severidad autopercibida de sensibilidad estacional, independiente del tono simpático y parasimpático basal, sexo y la edad.
+  8. La aptitud física (sppb_total) pareciera tener una relación no lineal con la sensibilidad estacional (se_ssi), donde aquellos con winter blues tienen una mayor aptitud física que aquellos con SAD o trastornos estacionales, independiente de la edad y el sexo.
+  9. La aptitud física (sppb_total) no pareciera estar relacionada con las horas de sueño promedio (se_sueno_horas).
+  10. El estrés percibido pareciera aumentar con una menor cantidad de horas de sueño autorreportadas a lo largo del año, independiente del sexo y la edad.
+  11. Sin hallazgos
+  12. Sin hallazgos
+  13. La presión arterial no predice variaciones en las horas de sueño.
+  14. La verosimilitud (odds ratio) de tener sensibilidad estacional, es mayor en mujeres, es menor cuanto mayor horas de sueño (tendencia), es menor cuanto mayor tono simpatico previo al ejercicio (tendencia) y es menor cuanta mayor edad.
+  15. Un mayor tono parasimpático previo al ejercicio (hrv_pns_1) se asocia con una menor cantidad de horas de sueño a lo largo del año autorreportado.
+  16. Existe una pequeña tendencia que sugiere que a mayor IMC existe un peor aptitud física.
+  17. Al incluir el efecto de la sensibilidad estacional comparado con el modelo anterior, no hubieron hallazgos adicionales
+  18. Existe una leve tendencia donde mayor IMC (m_imc_cat) pareciera asociarse a una menor aptitud física (sspb_total)
+  19. Existe una leve tendencia donde una mayor presión arterial (c_pam) se asocia a un mayor IMC (m_imc), del mismo modo las mujeres presentan un mayor imc que los hombres. Finalmente, un mayor aptitud fisica (sppb_total) se relaciona con un menor IMC.

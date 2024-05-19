@@ -19,9 +19,8 @@ elderly[, sppb_cat := fcase(
 
 ## Transform to factor variables
 elderly[, `:=`(
-  ## Sex and anthropometric variables
+  ## Sex
   sexo = factor(sexo, levels = 1:2, labels = c("Hombre", "Mujer")),
-  m_imc_cat = factor(m_imc_cat, levels = c("Insuficiente", "Normal", "Sobrepeso", "Obesidad")),
   ## Seasonal sensitivity data
   se_patron_invierno = factor(se_patron_invierno, levels = 1:2, labels = c("Sí", "No")),
   se_patron_verano = factor(se_patron_verano, levels = 1:2, labels = c("Sí", "No")),
@@ -37,6 +36,21 @@ elderly[, `:=`(
   sppb_4mts_puntos = factor(sppb_4mts_puntos, levels = 1:4, labels = c("> 8.7 seg", "6.21 a 8.7 seg", "4.82 a 6.2 seg", "< 4.82 seg")),
   sppb_sit_to_stand_puntaje = factor(sppb_sit_to_stand_puntaje, levels = 0:4, labels = c("> 60 seg", "> 16.7 seg", "13.7 a 16.69 seg", "11.2 a 13.69 seg", "< 11.19 seg"))
 )][]
+
+## Composición corporal
+elderly[m_talla > 100, m_talla := m_talla/100]
+elderly[m_peso_kg_1 > 300, m_peso_kg_1 := m_peso_kg_1/10]
+elderly[, m_peso_kg := round(x = mean(x = c(m_peso_kg_1, m_peso_kg_2)), digits = 1), id]
+elderly[, `:=`(m_peso_kg_1 = NULL, m_peso_kg_2 = NULL)]
+elderly[, m_imc := round(m_peso_kg / m_talla^2, digits = 2)]
+elderly[, m_imc_cat := cut(m_imc, breaks = c(0, 18.5, 24.9, 29.9, Inf), labels = c("Infrapeso", "Normopeso", "Sobrepeso", "Obeso"))]
+
+## Presión arterial
+elderly[, c_pam := round((c_pas + (2 * c_pad)) / 3, 1)]
+
+## SPPB
+elderly[, .SD, .SDcols = grepl("sppb", names(elderly))] |>
+  lapply(class)
 
 ## Export data
 save(elderly, file = "data/elderly.RData")

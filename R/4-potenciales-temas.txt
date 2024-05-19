@@ -1,0 +1,36 @@
+### 1. Relación entre Estrés Percibido y Respuestas Fisiológicas Autónomas
+
+**Objetivo**: Investigar cómo el estrés percibido (PSS) se relaciona con diferentes medidas de variabilidad de la frecuencia cardíaca (HRV), que reflejan la actividad del sistema nervioso autónomo, en personas mayores.
+
+**Justificación**:
+- Los hallazgos 1, 4 y 6 muestran asociaciones significativas entre el estrés percibido y el tono simpático previo al ejercicio, pero no con el estrés autonómico cardíaco.
+- El estrés percibido parece estar asociado con el tono simpático basal, lo que sugiere una relación compleja entre el estrés psicológico y la respuesta fisiológica.
+
+**Hipótesis**:
+- El estrés percibido modula la respuesta del sistema nervioso simpático más significativamente que la del sistema parasimpático.
+- Existen mediadores o moderadores (como la edad y el sexo) que influyen en esta relación.
+
+### 2. Impacto de la Sensibilidad Estacional en la Aptitud Física y el Estrés Percibido
+
+**Objetivo**: Explorar cómo la sensibilidad estacional afecta la aptitud física y el estrés percibido en personas mayores, y determinar si estas relaciones son lineales o no lineales.
+
+**Justificación**:
+- Los hallazgos 5, 7 y 8 indican que la sensibilidad estacional (especialmente el winter blues) se asocia tanto con el estrés percibido como con la aptitud física.
+- Se observan relaciones no lineales, lo que sugiere que diferentes niveles de sensibilidad estacional podrían tener efectos variados.
+
+**Hipótesis**:
+- Las personas mayores con winter blues tienen mayor aptitud física y mayor estrés percibido comparado con aquellos con SAD o sin trastornos estacionales.
+- La severidad de la sensibilidad estacional modula estas relaciones, independiente de la edad y el sexo.
+
+
+### 3. Influencia del Sueño y la Composición Corporal en el Estrés Percibido y la Aptitud Física
+
+**Objetivo**: Evaluar cómo las horas de sueño y la composición corporal (IMC) influyen en el estrés percibido y la aptitud física en personas mayores.
+
+**Justificación**:
+- Los hallazgos 9, 10, 15, 16, 18 y 19 muestran relaciones interesantes entre el sueño, el IMC, el estrés percibido y la aptitud física.
+- Existe una tendencia que sugiere que el sueño y el IMC tienen un impacto en el estrés y la aptitud física, aunque estas relaciones no siempre son directas.
+
+**Hipótesis**:
+- Menores horas de sueño y mayor IMC se asocian con mayor estrés percibido y menor aptitud física.
+- La relación entre IMC y aptitud física es mediada por la calidad del sueño y el estrés percibido.

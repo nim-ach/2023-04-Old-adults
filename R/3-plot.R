@@ -7,15 +7,7 @@ library(corrplot)
 ## Load the data
 data("elderly")
 
-## Auxiliary function
-any_of <- function(a, b, word) {
-  a %ilike% word | b %ilike% word
-}
-
-# Exploring the dataset ---------------------------------------------------
-
-dim(elderly) # rows and cols
-#> [1] 77 65
+# Preparing the dataset ---------------------------------------------------
 
 vars <- c("edad" = "Age", "pss_total" = "Total PSS", "sppb_total" = "Total SPPB",
           "se_sueno_otono" = "Fall sleep", "se_sueno_primavera" = "Spring sleep", "se_sueno_invierno" = "Winter sleep", "se_sueno_verano" = "Summer sleep",
@@ -26,12 +18,14 @@ dat <- elderly[, .SD, .SDcols = names(vars)]
 names(dat) <- vars[names(dat)]
 
 corr <- cor(dat, method = "spearman")
-corr_p <- cor.mtest(corr, conf.level = .95)
+corr_p <- cor.mtest(dat, conf.level = .95, method = "spearman")
 
 fig <- corrplot(corr, type = "upper", diag = TRUE, p.mat = corr_p$p,
          sig.level = 0.05, insig = "pch", pch = "X", pch.cex = 1,
          tl.col = "gray20") |> substitute()
+eval(fig)
 
 jpeg("output/fig-1.jpeg", width = 1080*2.5, height = 1080*2.5, res = 350)
 eval(fig)
 dev.off()
+
