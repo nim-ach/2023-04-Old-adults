@@ -30,11 +30,12 @@ elderly[, `:=`(
   se_variacion_peso = factor(se_variacion_peso, levels = 0:5, labels = c("0 a 1","1.5 a 2","2.5 a 3","3.5 a 4","4.5 a 5","> 5")),
   ## SPPB data
   sppb_cat = factor(sppb_cat, levels = c("Mínima", "Leve", "Moderada", "Grave")),
+  sppb_equilibrio = factor(sppb_juntos + sppb_semi_tandem + sppb_tandem, ordered = TRUE),
   sppb_juntos = factor(sppb_juntos, levels = 0:2, labels = c("< 3 seg", "3 a 9.99 seg", "> 10 seg")),
   sppb_semi_tandem = factor(sppb_semi_tandem, levels = 0:2, labels = c("< 3 seg", "3 a 9.99 seg", "> 10 seg")),
   sppb_tandem = factor(sppb_tandem, levels = 0:2, labels = c("< 3 seg", "3 a 9.99 seg", "> 10 seg")),
-  sppb_4mts_puntos = factor(sppb_4mts_puntos, levels = 1:4, labels = c("> 8.7 seg", "6.21 a 8.7 seg", "4.82 a 6.2 seg", "< 4.82 seg")),
-  sppb_sit_to_stand_puntaje = factor(sppb_sit_to_stand_puntaje, levels = 0:4, labels = c("> 60 seg", "> 16.7 seg", "13.7 a 16.69 seg", "11.2 a 13.69 seg", "< 11.19 seg"))
+  sppb_4mts_puntos = factor(sppb_4mts_puntos, levels = 1:4, labels = c("> 8.7 seg", "6.21 a 8.7 seg", "4.82 a 6.2 seg", "< 4.82 seg"), ordered = TRUE),
+  sppb_sit_to_stand_puntaje = factor(sppb_sit_to_stand_puntaje, levels = 0:4, labels = c("> 60 seg", "> 16.7 seg", "13.7 a 16.69 seg", "11.2 a 13.69 seg", "< 11.19 seg"), ordered = TRUE)
 )][]
 
 ## Composición corporal

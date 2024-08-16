@@ -393,3 +393,21 @@ m_h19_02 <- brm(formula = m_imc ~ c_pam + sppb_total + sexo + edad,
                iter = 10000, warmup = 2000,
                file = "output/modelos/m_h19_02")
                describe_posterior(m_h19_02)
+
+## H20: Estrés percibido se relaciona con aptitud física.
+## pss_total ~ sppb_total
+m_h20_01 <- brm(formula = sppb_total ~ pss_total,
+               data = dat,
+               prior = priors,
+               cores = 5, chains = 5, seed = 1234,
+               iter = 4000, warmup = 2000,
+               file = "output/modelos/m_h20_01")
+               describe_posterior(m_h20_01)
+
+m_h20_02 <- brm(formula = sppb_total ~ pss_total + sexo + edad,
+               data = dat,
+               prior = priors,
+               cores = 5, chains = 5, seed = 1234,
+               iter = 10000, warmup = 2000,
+               file = "output/modelos/m_h20_02")
+               describe_posterior(m_h20_02)
